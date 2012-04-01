@@ -1,6 +1,6 @@
 #GeoIP
 
-![World](http://modules.perl6.org/logos/GeoIPerl6.png)
+![World](http://modules.perl6.org/logos/GeoIP.png)
 
 Connect to MaxMind GeoIP database from Perl6.
 
