@@ -22,12 +22,30 @@ sudo port install libgeoip GeoLiteCity
 use GeoIP;
 my $g = GeoIP.new;
 
-say $g.country_code_by_addr('91.192.78.63');
+say $g.country_code( '91.192.78.63' );
+say $g.country_name( '91.192.78.63' );
+say $g.continent_code( '91.192.78.63' );
 ```
 
-If everything is installed correctly it should print ```PL```.
+If everything is installed correctly it should print:
 
+```
+PL
+Poland
+EU
+```
+
+Using host names is also allowed:
+
+```perl
+say $g.country_code( 'bbkr.org' );
+```
 
 ##TODO
 
 Everything :)
+
+* other operating systems
+* paid databases
+* fetching whole record
+* consistent interface
