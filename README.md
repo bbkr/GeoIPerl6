@@ -47,7 +47,7 @@ say $g.country_code( 'bbkr.org' );
 
 Everything :)
 
-* other operating systems
+* other operating systems (waiting for [this issue](https://github.com/jnthn/zavolaj/issues/7) to be resolved)
 * paid databases
 * fetching whole record
 * consistent interface
