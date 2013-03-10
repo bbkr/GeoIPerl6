@@ -1,7 +1,7 @@
 {
-    "name" : "GeoIP",
-    "version" : "0.1",
-    "description" : "GeoIP MaxMind library interface",
+    "name" : "GeoIP::City",
+    "version" : "0.3",
+    "description" : "MaxMind GeoIP City library interface",
     "author" : "Pawel Pabian",
     "authority" : "bbkr",
     "depends" : [ "NativeCall" ],
