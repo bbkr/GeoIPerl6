@@ -45,22 +45,22 @@ sub GeoIP_region_name_by_code ( Str, Str ) returns Str is native( LIB ) { * }
 sub GeoIP_time_zone_by_country_and_region ( Str, Str ) returns Str is native( LIB ) { * }
 
 multi method new ( ) {
-    
+
     # open GEOIP_CITY_EDITION_REV1 by default
     # because this free version is distributed
     # in most package repositories
     my $self = GeoIP_open_type( 2, 0 );
-    
+
     GeoIP_set_charset( $self, 1 );
 
     return $self;
 }
 
 multi method new ( Str $file! where $_.IO ~~ :f & :r ) {
-    
+
     # open any GEOIP_CITY_EDITION_* file provided
     my $self = GeoIP_open( $file, 0 );
-    
+
     GeoIP_set_charset( $self, 1 );
 
     return $self;
@@ -80,23 +80,46 @@ multi method locate ( Str $host! ) {
 
 method !derive ( GeoIPRecord $record! ) {
     return unless defined $record;
-    
-    return {
-        'area_code'         => $record.area_code,
-        'city'              => $record.city,
-        'continent_code'    => $record.continent_code,
-        'country'           => $record.country_name,
-        'country_code'      => $record.country_code,
-        'dma_code'          => $record.dma_code,
-        'latitude'          => $record.latitude.fmt( '%f' ),
-        'longitude'         => $record.longitude.fmt( '%f' ),
-        'postal_code'       => $record.postal_code,
-        'region'            => GeoIP_region_name_by_code(
-            $record.country_code, $record.region
-        ),
-        'region_code'       => $record.region,
-        'time_zone'         => GeoIP_time_zone_by_country_and_region(
-            $record.country_code, $record.region
-        )
-    };
+
+    my %result;
+
+    %result{'area_code'} = $record.area_code
+        if defined $record.area_code;
+
+    %result{'city'} = $record.city
+        if defined $record.city;
+
+    %result{'continent_code'} = $record.continent_code
+        if defined $record.continent_code;
+
+    %result{'country'} = $record.country_name
+        if defined $record.country_name;
+
+    %result{'country_code'} = $record.country_code
+        if defined $record.country_code;
+
+    %result{'dma_code'} = $record.dma_code
+        if defined $record.dma_code;
+
+    %result{'latitude'} = $record.latitude.fmt( '%f' )
+        if defined $record.latitude;
+
+    %result{'longitude'} = $record.longitude.fmt( '%f' )
+        if defined $record.longitude;
+
+    %result{'postal_code'} = $record.postal_code
+        if defined $record.postal_code;
+
+    %result{'region'} = GeoIP_region_name_by_code(
+        $record.country_code, $record.region
+    ) if defined $record.country_code and defined $record.region;
+
+    %result{'region_code'} = $record.region
+        if defined $record.region;
+
+    %result{'time_zone'} = GeoIP_time_zone_by_country_and_region(
+        $record.country_code, $record.region
+    ) if defined $record.country_code and defined $record.region;
+
+    return %result;
 }

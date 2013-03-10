@@ -31,28 +31,32 @@ Compatible with Perl 6 [Rakudo](http://rakudo.org/) 2013.02+,
     
     my $geo = GeoIP::City.new;
     
-    say $geo.locate( 'bbkr.org' );
-    say $geo.locate( '91.192.78.63' );
+    say $geo.locate( 'perl.org' );
+    say $geo.locate( '207.171.7.63' );
 ```
 
 In both cases it should print following Hash:
 
 ```perl
     {
-        "area_code" => 0,
-        "city" => "Gdansk",
-        "continent_code" => "EU",
-        "country" => "Poland",
-        "country_code" => "PL",
-        "dma_code" => 0,
-        "latitude" => "54.360802",
-        "longitude" => "18.658300",
-        "postal_code" => Str,
-        "region" => "Pomorskie",
-        "region_code" => "82",
-        "time_zone" => "Europe/Warsaw"
+        "area_code" => 310,
+        "city" => "Beverly Hills",
+        "continent_code" => "NA",
+        "country" => "United States",
+        "country_code" => "US",
+        "dma_code" => 803,
+        "latitude" => "34.074902",
+        "longitude" => "-118.399696",
+        "postal_code" => "90209",
+        "region" => "California",
+        "region_code" => "CA",
+        "time_zone" => "America/Los_Angeles"
     }
 ```
+
+Precision of response and amount of its fields may vary.
+
+`Nil` is returned if location is not found.
 
 ###Paid databases
 
