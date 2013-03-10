@@ -8,7 +8,7 @@ Compatible with Perl 6 [Rakudo](http://rakudo.org/) 2013.02+,
 
 ####Ubuntu Linux
 
-* In terminal enter `sudo apt-get install libgeoip1 geoip-database`
+* In terminal enter `sudo apt-get install libgeoip1 geoip-database-contrib`
 
 ####Mac OS X
 
