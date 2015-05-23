@@ -1,6 +1,6 @@
 use NativeCall;
 
-class GeoIP::City is repr('CPointer');
+unit class GeoIP::City is repr('CPointer');
 
 class GeoIPRecord is repr('CStruct') {
     has Str $.country_code;
