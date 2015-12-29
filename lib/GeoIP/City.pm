@@ -28,6 +28,11 @@ submethod BUILD ( Str :$directory where { .defined.not or .IO ~~ :d } ) {
     GeoIP_cleanup( );
 }
 
+method info {
+    
+    return map { .key => GeoIP_database_info( .value ) }, %!db;
+}
+
 method !locate ( Record $record! ) {
     
     return unless defined $record;
