@@ -34,7 +34,7 @@ is-deeply $g.locate( '2001:4860:4860::8888' ), {
     'longitude' => -97.0
 }, 'locate by IPv6';
 
-is-deeply $g.locate( '0.0.0.0' ), Nil, 'not located';
+is $g.locate( '0.0.0.0' ), Nil, 'not located';
 
 lives-ok { $g = GeoIP::City.new( directory => '/' ) }, 'initialize custom directory';
 

@@ -88,4 +88,3 @@ multi method locate ( Str:D $ip! where / ^ [<xdigit> ** 0..4] ** 3..8 % ':' $ / 
     
     return self!locate( GeoIP_record_by_addr_v6( $db, $ip ) );
 }
-
