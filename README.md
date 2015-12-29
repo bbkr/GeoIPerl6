@@ -110,5 +110,5 @@ Released under [Artistic License 2.0](http://www.perlfoundation.org/artistic_lic
 
 ## CONTACT
 
-You can find me (and many awesome people who helped me to develop this module)
+You can find me (and awesome people who helped me to develop this module)
 on irc.freenode.net #perl6 channel as **bbkr**.
