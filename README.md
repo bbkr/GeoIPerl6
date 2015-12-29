@@ -1,6 +1,9 @@
-# MaxMind GeoIP legacy free/pro databases interface
+# MaxMind GeoIP legacy free/pro interface
+
+[![Build Status](https://travis-ci.org/bbkr/GeoIPerl6.svg?branch=master)](https://travis-ci.org/bbkr/GeoIPerl6)
 
 Currently City databases are supported.
+
 Country, Region, Organization or ISP support may follow.
 
 ## SYNOPSIS
@@ -58,6 +61,7 @@ Amount of fields in response may vary, below is the most complete one:
 ```
  
 If geo location for IP was not found then ```Nil``` is returned.
+
 If database for given IP version is not available then ```GeoIP::City::X::DatabaseMissing``` exception is thrown.
 
 ## REQUIREMENTS
