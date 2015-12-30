@@ -5,5 +5,6 @@ language: perl6
 perl6:
   - latest
 before_install:
-  - sudo apt-get install libgeoip1 geoip-database-contrib
+  - sudo apt-get update -q
+  - sudo apt-get install libgeoip1 geoip-database-contrib -y
   - sudo ln -s /usr/share/GeoIP/GeoLiteCityv6.dat /usr/share/GeoIP/GeoIPCityv6.dat
