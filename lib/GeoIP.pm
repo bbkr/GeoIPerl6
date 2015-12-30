@@ -25,14 +25,14 @@ class GeoIP is repr( 'CPointer' ) is export {
         has int32 $.netmask;
     }
 
-    sub GeoIP_setup_custom_directory ( Str ) is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_db_avail( Int ) returns Int is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_open_type ( Int, Int ) returns GeoIP is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_set_charset ( GeoIP, Int ) returns Int is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_database_info ( GeoIP ) returns Str is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_record_by_addr ( GeoIP, Str ) returns Record is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_record_by_addr_v6 ( GeoIP, Str ) returns Record is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_region_name_by_code ( Str, Str ) returns Str is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_time_zone_by_country_and_region ( Str, Str ) returns Str is native( 'libGeoIP' ) is export { * }
-    sub GeoIP_cleanup ( ) returns Int is native( 'libGeoIP' ) is export { * }
+    sub GeoIP_setup_custom_directory ( Str ) is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_db_avail( int32 ) returns Int is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_open_type ( int32, int32 ) returns GeoIP is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_set_charset ( GeoIP, int32 ) returns int32 is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_database_info ( GeoIP ) returns Str is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_record_by_addr ( GeoIP, Str ) returns Record is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_record_by_addr_v6 ( GeoIP, Str ) returns Record is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_region_name_by_code ( Str, Str ) returns Str is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_time_zone_by_country_and_region ( Str, Str ) returns Str is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_cleanup ( ) returns int32 is native( 'GeoIP', v1 ) is export { * }
 }
