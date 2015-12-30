@@ -26,7 +26,7 @@ class GeoIP is repr( 'CPointer' ) is export {
     }
 
     sub GeoIP_setup_custom_directory ( Str ) is native( 'GeoIP', v1 ) is export { * }
-    sub GeoIP_db_avail( int32 ) returns Int is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_db_avail( int32 ) returns int32 is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_open_type ( int32, int32 ) returns GeoIP is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_set_charset ( GeoIP, int32 ) returns int32 is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_database_info ( GeoIP ) returns Str is native( 'GeoIP', v1 ) is export { * }
