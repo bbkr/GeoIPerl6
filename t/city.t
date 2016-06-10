@@ -18,7 +18,7 @@ is-deeply $g.locate( '8.8.8.8' ), {
     'dma_code' => 807,
     'latitude' => 37.386002,
     'longitude' => -122.083801,
-    'postal_code' => '94040',
+    'postal_code' => '94035',
     'region' => 'California',
     'region_code' => 'CA',
     'time_zone' => 'America/Los_Angeles'
