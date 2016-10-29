@@ -1,4 +1,5 @@
 {
+    "perl" : "6.*",
     "name" : "GeoIP::City",
     "version" : "1.0",
     "description" : "MaxMind GeoIP City library interface",
