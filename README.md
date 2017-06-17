@@ -104,10 +104,6 @@ To obtain databases through [geoipupdate](http://dev.maxmind.com/geoip/geoipupda
 ***Warning:*** Do not use old REV0 databases (for example paid ```ProductIds``` = ```132```).
 
 
-## LICENSE
-
-Released under [Artistic License 2.0](http://www.perlfoundation.org/artistic_license_2_0).
-
 ## CONTACT
 
 You can find me (and awesome people who helped me to develop this module)
