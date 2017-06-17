@@ -87,6 +87,7 @@ In terminal enter:
 ```bash
     brew install geoip geoipupdate
     geoipupdate -f etc/GeoIP.conf
+    ln -s /usr/local/var/GeoIP/GeoLiteCity.dat /usr/local/var/GeoIP/GeoIPCity.dat
     ln -s /usr/local/var/GeoIP/GeoLiteCityv6.dat /usr/local/var/GeoIP/GeoIPCityv6.dat
 ```
 
