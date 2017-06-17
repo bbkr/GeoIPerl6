@@ -34,8 +34,8 @@ is-deeply $g.locate( $ipv6 ), {
     'country' => 'United States',
     'country_code' => 'US',
     'dma_code' => 0,
-    'latitude' => 38.0,
-    'longitude' => -97.0
+    'latitude' => 37.750999,
+    'longitude' => -97.821999
 }, 'locate by IPv6';
 
 is $g.locate( '0.0.0.0' ), Nil, 'not located';
