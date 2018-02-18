@@ -1,6 +1,6 @@
 # bindings for https://github.com/maxmind/geoip-api-c
 
-use NativeCall;
+use NativeCall :ALL;
 
 class GeoIP:auth<github:bbkr>:ver<1.0.1> is repr( 'CPointer' ) is export {
 
@@ -25,13 +25,14 @@ class GeoIP:auth<github:bbkr>:ver<1.0.1> is repr( 'CPointer' ) is export {
         has int32 $.netmask;
     }
 
+    
     sub libgeoip ( ) {
         
         # library location may be given as environment variable
         return $_ with %*ENV{ 'PERL6_LIBGEOIP' };
         
-        # default location
-        return 'GeoIP';
+        # environment default 
+        return guess_library_name( ( 'GeoIP', v1 ) );
     }
 
     sub GeoIP_setup_custom_directory ( CArray[ uint8 ] ) is native( &libgeoip ) is export { * }
