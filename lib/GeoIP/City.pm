@@ -1,6 +1,7 @@
 unit class GeoIP::City:auth<github:bbkr>:ver<1.0.0>;
 
 use GeoIP:ver<1.0.0>;
+use NativeCall;
 
 has GeoIP %!db;
 
@@ -9,7 +10,7 @@ class X::DatabaseMissing is Exception is export { };
 submethod BUILD ( Str :$directory where { .defined.not or .IO ~~ :d } ) {
     
     # change default directory
-    GeoIP_setup_custom_directory( $directory ) if defined $directory;
+    GeoIP_setup_custom_directory( CArray[uint8].new( .encode.list, 0 ) ) with $directory;
     
     # initialize GeoIPCity.dat and GeoIPCityv6.dat databases
     for GEOIP_CITY_EDITION_REV1, GEOIP_CITY_EDITION_REV1_V6 {

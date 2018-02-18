@@ -25,7 +25,7 @@ class GeoIP:auth<github:bbkr>:ver<1.0.0> is repr( 'CPointer' ) is export {
         has int32 $.netmask;
     }
 
-    sub GeoIP_setup_custom_directory ( Str ) is native( 'GeoIP', v1 ) is export { * }
+    sub GeoIP_setup_custom_directory ( CArray[uint8] ) is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_db_avail( int32 ) returns int32 is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_open_type ( int32, int32 ) returns GeoIP is native( 'GeoIP', v1 ) is export { * }
     sub GeoIP_set_charset ( GeoIP, int32 ) returns int32 is native( 'GeoIP', v1 ) is export { * }
