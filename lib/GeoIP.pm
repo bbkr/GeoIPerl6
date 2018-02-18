@@ -31,10 +31,10 @@ class GeoIP:auth<github:bbkr>:ver<1.0.1> is repr( 'CPointer' ) is export {
         return $_ with %*ENV{ 'PERL6_LIBGEOIP' };
         
         # default location
-        return ( 'GeoIP', v1 );
+        return 'GeoIP';
     }
 
-    sub GeoIP_setup_custom_directory ( Str ) is native( &libgeoip ) is export { * }
+    sub GeoIP_setup_custom_directory ( CArray[ uint8 ] ) is native( &libgeoip ) is export { * }
     sub GeoIP_db_avail( int32 ) returns int32 is native( &libgeoip ) is export { * }
     sub GeoIP_open_type ( int32, int32 ) returns GeoIP is native( &libgeoip ) is export { * }
     sub GeoIP_set_charset ( GeoIP, int32 ) returns int32 is native( &libgeoip ) is export { * }
