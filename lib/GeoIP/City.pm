@@ -39,38 +39,28 @@ method !locate ( Record $record! ) {
 
     my %result;
 
-    %result{'area_code'} = $record.area_code
-        if defined $record.area_code;
+    %result{'area_code'} = $_ with $record.area_code;
 
-    %result{'city'} = $record.city
-        if defined $record.city;
+    %result{'city'} = $_ with $record.city;
 
-    %result{'continent_code'} = $record.continent_code
-        if defined $record.continent_code;
+    %result{'continent_code'} = $_ with $record.continent_code;
 
-    %result{'country'} = $record.country_name
-        if defined $record.country_name;
+    %result{'country'} = $_ with $record.country_name;
 
-    %result{'country_code'} = $record.country_code
-        if defined $record.country_code;
+    %result{'country_code'} = $_ with $record.country_code;
 
-    %result{'dma_code'} = $record.dma_code
-        if defined $record.dma_code;
+    %result{'dma_code'} = $_ with $record.dma_code;
 
-    %result{'latitude'} = $record.latitude.round(0.000001)
-        if defined $record.latitude;
+    %result{'latitude'} = .round(0.000001) with $record.latitude;
 
-    %result{'longitude'} = $record.longitude.round(0.000001)
-        if defined $record.longitude;
+    %result{'longitude'} = .round(0.000001) with $record.longitude;
 
-    %result{'postal_code'} = $record.postal_code
-        if defined $record.postal_code;
+    %result{'postal_code'} = $_ with $record.postal_code;
 
     %result{'region'} = GeoIP_region_name_by_code( $record.country_code, $record.region )
         if defined $record.country_code and defined $record.region;
 
-    %result{'region_code'} = $record.region
-        if defined $record.region;
+    %result{'region_code'} = $_ with $record.region;
 
     %result{'time_zone'} = GeoIP_time_zone_by_country_and_region( $record.country_code, $record.region )
         if defined $record.country_code and defined $record.region;
