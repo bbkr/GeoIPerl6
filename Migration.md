@@ -45,7 +45,7 @@ Note:
 
 GeoIP2 returns more complex result. Here is how to map new structure to old one:
 
-```
+```perl6
 my %new-result = $geo.locate( ip => '8.8.8.8' );
 
 my %old-reuslt = (
