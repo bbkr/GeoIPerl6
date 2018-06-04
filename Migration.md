@@ -80,6 +80,7 @@ my %old-reuslt = (
         %new-result{ 'subdivisions' }[ * - 1 ]{ 'iso_code' } !! Nil,
 
     'time_zone' => %new-result{ 'location' }{ 'time_zone' }
+);
 ```
 
 ## Check the new stuff
