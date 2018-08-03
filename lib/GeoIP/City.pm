@@ -1,6 +1,6 @@
-unit class GeoIP::City:auth<github:bbkr>:ver<1.0.1>;
+unit class GeoIP::City:auth<github:bbkr>:ver<1.0.2>;
 
-use GeoIP:ver<1.0.1>;
+use GeoIP:ver<1.0.2>;
 use NativeCall;
 
 has GeoIP %!db;

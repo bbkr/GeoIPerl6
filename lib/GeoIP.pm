@@ -2,7 +2,7 @@
 
 use NativeCall :ALL;
 
-class GeoIP:auth<github:bbkr>:ver<1.0.1> is repr( 'CPointer' ) is export {
+class GeoIP:auth<github:bbkr>:ver<1.0.2> is repr( 'CPointer' ) is export {
 
     enum Types is export (
         GEOIP_CITY_EDITION_REV1 => 2,
