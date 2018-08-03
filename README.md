@@ -10,5 +10,5 @@ Also they can [no longer be downloaded](https://github.com/maxmind/geoipupdate/i
 You should migrate to [GeoIP v2](https://github.com/bbkr/GeoIP2) databases as soon as possible -
 Please follow [migration tutorial](https://github.com/bbkr/GeoIPErl6/blob/master/Migration.md).
 
-Documentation was removed to discourage anyone from using this module,
-you can find it in historical commits if you really need it.
+Documentation was removed to discourage anyone from using this module.
+You can find it in historical commits if you really need it.
