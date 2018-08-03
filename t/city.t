@@ -7,22 +7,22 @@ plan( 7 );
 
 my $g;
 
-lives-ok { $g = GeoIP::City.new }, 'initialize';
+lives-ok { $g = GeoIP::City.new( directory => 't/databases' ) }, 'initialize';
 
 # OpenDNS addresses are used for tests
-my $ipv4 = '208.67.222.222';
-my $ipv6 = '2620:0:ccc::2';
+my $ipv4 = '64.17.254.216';
+my $ipv6 = '2001:200::';
 
 is-deeply $g.locate( $ipv4 ), {
-    'area_code' => 415,
-    'city' => 'San Francisco',
+    'area_code' => 310,
+    'city' => 'El Segundo',
     'continent_code' => 'NA',
     'country' => 'United States',
     'country_code' => 'US',
-    'dma_code' => 807,
-    'latitude' => 37.769699,
-    'longitude' => -122.393303,
-    'postal_code' => '94107',
+    'dma_code' => 803,
+    'latitude' => 33.916401,
+    'longitude' => -118.403999,
+    'postal_code' => '90245',
     'region' => 'California',
     'region_code' => 'CA',
     'time_zone' => 'America/Los_Angeles'
@@ -30,12 +30,12 @@ is-deeply $g.locate( $ipv4 ), {
 
 is-deeply $g.locate( $ipv6 ), {
     'area_code' => 0,
-    'continent_code' => 'NA',
-    'country' => 'United States',
-    'country_code' => 'US',
+    'continent_code' => 'AS',
+    'country' => 'Japan',
+    'country_code' => 'JP',
     'dma_code' => 0,
-    'latitude' => 37.750999,
-    'longitude' => -97.821999
+    'latitude' => 36.0,
+    'longitude' => 138.0
 }, 'locate by IPv6';
 
 is $g.locate( '0.0.0.0' ), Nil, 'not located';
